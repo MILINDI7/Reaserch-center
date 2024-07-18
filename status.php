@@ -15,6 +15,9 @@ if ($conn->connect_error) {
 // Retrieve data from the database
 $sql = "SELECT * FROM contactinfo";
 $result = $conn->query($sql);
+
+$sql2 = "SELECT * FROM newsletter";
+$result2 = $conn->query($sql2);
 ?>
 
 <!DOCTYPE html>
@@ -196,6 +199,25 @@ th {
             } else {
                 echo "<tr><td colspan='4'>No records found</td></tr>";
             }
+            ?>
+        </table>
+    </div>
+    <div class="container2">
+        <h2>Subscribed Newsletter</h2>
+        <table>
+            <tr>
+                <th>Email</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result2->fetch_assoc()) {
+                    echo "<tr>
+                            <td>" . $row["email"]. "</td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>No records found</td></tr>";
+            }
             $conn->close();
             ?>
         </table>
@@ -304,7 +326,7 @@ th {
             <h5>
               Newsletter
             </h5>
-            <form action="https://formspree.io/f/mgeqvzeo" method="post">
+            <form action="newsletter.php" method="post">
               <input name="email" type="email" placeholder="Enter your email" required>
               <button type="submit">
                 Subscribe
