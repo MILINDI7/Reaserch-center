@@ -728,5 +728,7 @@ a:focus {
   text-align: center;
 }
 
-/* end footer section*/
-/*# sourceMappingURL=style.css.map */
+
+#extra input{
+  margin-left: 27%;
+}
