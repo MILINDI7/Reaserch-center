@@ -557,7 +557,6 @@ a:focus {
   text-align: center;
   align-items: center;
   background-color: transparent;
-  width: 300px;
   margin-top: 15px;
   padding: 10px 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -738,5 +737,11 @@ a:focus {
   text-align: center;
 }
 
-/* end footer section*/
-/*# sourceMappingURL=style.css.map */
+
+#extra input{
+  margin-left: 27%;
+}
+
+#extras input{
+  margin-left: 27%;
+}
