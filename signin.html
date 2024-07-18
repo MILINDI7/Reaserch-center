@@ -79,39 +79,41 @@
     <!-- end header section -->
   </div>
 
+  <!-- contact section -->
 
-  <!-- who section -->
-
-  <section class="who_section layout_padding">
+  <section class="contact_section layout_padding">
     <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="img-box">
-            <img src="images/who-img.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                WHO WE ARE?
-              </h2>
-            </div>
-            <p>
-              Our research center is home to a diverse team of experts from various disciplines, including scientists, engineers, researchers, and scholars. Our team members are leaders in their fields, bringing a wealth of knowledge and experience to our projects. We are proud to foster an inclusive and supportive environment where all team members can thrive and contribute to our collective success.
-            </p>
-            <div>
-              <a href="do.html">
-                Read More
-              </a>
-            </div>
-          </div>
+
+      <div class="heading_container">
+        <h2>
+      Sign In
+        </h2>
+      </div>
+          <div class="row">
+            <div class="col-md-9 mx-auto">
+              <div class="contact-form">
+                <form action="signin.php" method="post" style="text-align: center;">
+                  <div class="input-group">
+                      <input type="email" id="email" name="email" placeholder="Username or Email" required>
+                  </div>
+                  <div class="input-group">
+                      <input type="password" id="password" name="password" placeholder="Password">
+                  </div>
+              <p><br>Don't already have an account? <a href="signup.html">Sign up</a></p>
+                  <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn_on-hover">
+                      Sign In
+                    </button>
+                  </div>
+                </form>
+              </div>
         </div>
       </div>
-    </div>
+      
   </section>
 
-  <!-- end who section -->
+
+  <!-- end contact section -->
 
 
   <!-- info section -->
@@ -212,7 +214,7 @@
               Newsletter
             </h5>
             <form action="https://formspree.io/f/mgeqvzeo" method="post">
-              <input name="email" type="email" placeholder="Enter your email required">
+              <input name="email" type="email" placeholder="Enter your email" required>
               <button type="submit">
                 Subscribe
               </button>

@@ -539,14 +539,18 @@ a:focus {
 .contact_section .contact-form {
   padding: 25px;
   border-radius: 20px;
+  text-align: center;
 }
 
 .contact_section .contact-form input {
   border: none;
   outline: none;
+  text-align: center;
+  align-items: center;
   background-color: transparent;
-  width: 100%;
-  margin: 15px 0;
+  width: 50%;
+  margin-left: 200px;
+  margin-top: 15px;
   padding: 10px 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   border-radius: 30px;

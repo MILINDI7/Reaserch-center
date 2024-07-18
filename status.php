@@ -1,3 +1,22 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "contactus";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Retrieve data from the database
+$sql = "SELECT * FROM contactinfo";
+$result = $conn->query($sql);
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -27,6 +46,68 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <script>
+        // Auto-refresh every 10 seconds
+        setTimeout(function() {
+            window.location.reload();
+        }, 5000); // 5 seconds
+    </script>
+    <style>
+      .container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+    </style>
 </head>
 
 <body class="sub_page">
@@ -48,23 +129,26 @@
             <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
               <ul class="navbar-nav  ">
                 <li class="nav-item active">
-                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="admin.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="about.html"> About </a>
+                  <a class="nav-link" href="about copy.html"> About </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="do.html"> What we do </a>
+                  <a class="nav-link" href="do copy.html"> What we do </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="portfolio.html"> Researches </a>
+                  <a class="nav-link" href="portfolio copy.html"> Researches </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="contact.html">Contact us</a>
+                  <a class="nav-link" href="contact copy.html">Contact us</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="status.html">Status</a>
+                  </li>
               </ul>
               <div class="user_option">
-                <a href="signin.html">
+                <a href="">
                   <img src="images/user.png" alt="">
                 </a>
                 <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
@@ -79,39 +163,47 @@
     <!-- end header section -->
   </div>
 
+  <!-- contact section -->
 
-  <!-- who section -->
-
-  <section class="who_section layout_padding">
+  <section class="contact_section layout_padding">
     <div class="container">
-      <div class="row">
-        <div class="col-md-5">
-          <div class="img-box">
-            <img src="images/who-img.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-7">
-          <div class="detail-box">
-            <div class="heading_container">
-              <h2>
-                WHO WE ARE?
-              </h2>
-            </div>
-            <p>
-              Our research center is home to a diverse team of experts from various disciplines, including scientists, engineers, researchers, and scholars. Our team members are leaders in their fields, bringing a wealth of knowledge and experience to our projects. We are proud to foster an inclusive and supportive environment where all team members can thrive and contribute to our collective success.
-            </p>
-            <div>
-              <a href="do.html">
-                Read More
-              </a>
-            </div>
-          </div>
-        </div>
+
+      <div class="heading_container">
+        <h2>
+          Status
+        </h2>
       </div>
+      <div class="container">
+        <h2>Submitted Information</h2>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Message</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
+                    echo "<tr>
+                            <td>" . $row["fullname"]. "</td>
+                            <td>" . $row["phone"]. "</td>
+                            <td>" . $row["email"]. "</td>
+                            <td>" . $row["message"]. "</td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>No records found</td></tr>";
+            }
+            $conn->close();
+            ?>
+        </table>
+    </div>
     </div>
   </section>
 
-  <!-- end who section -->
+
+  <!-- end contact section -->
 
 
   <!-- info section -->
@@ -212,7 +304,7 @@
               Newsletter
             </h5>
             <form action="https://formspree.io/f/mgeqvzeo" method="post">
-              <input name="email" type="email" placeholder="Enter your email required">
+              <input name="email" type="email" placeholder="Enter your email" required>
               <button type="submit">
                 Subscribe
               </button>
@@ -251,8 +343,6 @@
 
   <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
   <script type="text/javascript" src="js/bootstrap.js"></script>
-  <script type="text/javascript" src="js/jquery-3.6.0.min.js"></script>
-
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
   <!-- owl carousel script 
