@@ -53,9 +53,8 @@ $result = $conn->query($sql);
         }, 5000); // 5 seconds
     </script>
     <style>
-      .containers {
+      .container {
     background-color: white;
-    margin-left: 170px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -174,7 +173,7 @@ th {
           Status
         </h2>
       </div>
-      <div class="containers">
+      <div class="container">
         <h2>Submitted Information</h2>
         <table>
             <tr>
@@ -208,7 +207,7 @@ th {
 
 
   <!-- info section -->
-  <section class="info_section">
+  <section class="info_section ">
     <div class="container">
       <div class="row">
         <div class="col-md-3">
@@ -324,16 +323,11 @@ th {
                 <img src="images/youtube.png" alt="">
               </a>
             </div>
-            <form action="logout.php" method="post">
-              <button type="submit">
-                Log Out
-              </button>
           </div>
         </div>
       </div>
     </div>
   </section>
-
 
   <!-- end info_section -->
 
