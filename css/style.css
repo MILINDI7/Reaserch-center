@@ -529,6 +529,20 @@ a:focus {
   font-weight: 500;
 }
 
+.adjust{
+  margin-left: -100px;
+}
+
+.container1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Optional: Adds space between the sections */
+}
+.section {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
 /* contact section */
 .contact_section .heading_container {
   -webkit-box-align: center;
@@ -549,7 +563,6 @@ a:focus {
   align-items: center;
   background-color: transparent;
   width: 50%;
-  margin-left: 200px;
   margin-top: 15px;
   padding: 10px 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);

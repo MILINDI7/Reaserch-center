@@ -53,7 +53,7 @@ $result = $conn->query($sql);
         }, 5000); // 5 seconds
     </script>
     <style>
-      .container {
+      .container1 {
     background-color: white;
     padding: 20px;
     border-radius: 8px;
@@ -173,7 +173,7 @@ th {
           Status
         </h2>
       </div>
-      <div class="container">
+      <div class="container1">
         <h2>Submitted Information</h2>
         <table>
             <tr>
