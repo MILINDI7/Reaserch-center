@@ -15,6 +15,9 @@ if ($conn->connect_error) {
 // Retrieve data from the database
 $sql = "SELECT * FROM contactinfo";
 $result = $conn->query($sql);
+
+$sql2 = "SELECT * FROM newsletter";
+$result2 = $conn->query($sql2);
 ?>
 
 <!DOCTYPE html>
@@ -53,8 +56,9 @@ $result = $conn->query($sql);
         }, 5000); // 5 seconds
     </script>
     <style>
-      .container {
+      .container2 {
     background-color: white;
+    margin-left: 180px;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -173,7 +177,7 @@ th {
           Status
         </h2>
       </div>
-      <div class="container">
+      <div class="container2">
         <h2>Submitted Information</h2>
         <table>
             <tr>
@@ -190,6 +194,25 @@ th {
                             <td>" . $row["phone"]. "</td>
                             <td>" . $row["email"]. "</td>
                             <td>" . $row["message"]. "</td>
+                          </tr>";
+                }
+            } else {
+                echo "<tr><td colspan='4'>No records found</td></tr>";
+            }
+            ?>
+        </table>
+    </div>
+    <div class="container2">
+        <h2>Subscribed Newsletter</h2>
+        <table>
+            <tr>
+                <th>Email</th>
+            </tr>
+            <?php
+            if ($result->num_rows > 0) {
+                while($row = $result2->fetch_assoc()) {
+                    echo "<tr>
+                            <td>" . $row["email"]. "</td>
                           </tr>";
                 }
             } else {
@@ -303,7 +326,7 @@ th {
             <h5>
               Newsletter
             </h5>
-            <form action="https://formspree.io/f/mgeqvzeo" method="post">
+            <form action="newsletter.php" method="post">
               <input name="email" type="email" placeholder="Enter your email" required>
               <button type="submit">
                 Subscribe
@@ -323,6 +346,10 @@ th {
                 <img src="images/youtube.png" alt="">
               </a>
             </div>
+            <form action="logout.php" method="post">
+              <button type="submit">
+                Log Out
+              </button>
           </div>
         </div>
       </div>

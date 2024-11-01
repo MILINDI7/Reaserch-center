@@ -529,15 +529,24 @@ a:focus {
   font-weight: 500;
 }
 
-/* contact section */
-.contact_section .heading_container {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+.adjust{
+  margin-left: -100px;
 }
 
+.container1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Optional: Adds space between the sections */
+}
+.section {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+/* contact section */
+
+
 .contact_section .contact-form {
-  padding: 25px;
   border-radius: 20px;
   text-align: center;
 }
@@ -548,8 +557,6 @@ a:focus {
   text-align: center;
   align-items: center;
   background-color: transparent;
-  width: 50%;
-  margin-left: 10px;
   margin-top: 15px;
   padding: 10px 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -588,8 +595,10 @@ a:focus {
 }
 
 .contact_section .map_img-box {
-  width: 80%;
-  margin: 25px auto 0 auto;
+  width: 600px;
+  height: 600px;
+  margin: 25px auto 0 400px;
+  margin-bottom: 200px;
 }
 
 .contact_section .map_img-box img {
