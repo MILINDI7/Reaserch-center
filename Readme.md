@@ -7,7 +7,7 @@ HTML
 CSS
 JavaScript
 PHP
-Xamp
+Xaamp
 Github
 
 Key Features

@@ -595,13 +595,15 @@ a:focus {
 }
 
 .contact_section .map_img-box {
-  width: 600px;
-  height: 600px;
-  margin: 25px auto 0 400px;
-  margin-bottom: 200px;
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+  /* margin: 25px auto 0 400px; */
+  /* margin-bottom: 200px; */
 }
 
 .contact_section .map_img-box img {
+
   width: 100%;
 }
 
@@ -731,11 +733,11 @@ a:focus {
   background-size: cover;
 }
 
-#exxxx p{
+/* #exxxx p{
   color: grey;
   font-size: 50px;
   text-align: center;
-}
+} */
 
 
 #extra input{
