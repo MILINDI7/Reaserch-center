@@ -23,7 +23,7 @@ CSS and linters
 
 💻 Getting Started
 
-To get a local copy up and running, follow these steps.
+📄To get a local copy up and running, follow these steps.
 
 Prerequisites
 In order to run this project you need:
@@ -52,8 +52,10 @@ Deployment
 [RESEARCH-CENTER](https://milindi7.github.io/Reaserch-center/)
 
 👥 Authors
-MILINDI SHEMA David
-UZABUMWANA Fiston
+
+👤MILINDI SHEMA David
+
+👤UZABUMWANA Fiston
 
 👤 Author1
 
