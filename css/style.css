@@ -28,45 +28,167 @@ body {
   padding-bottom: 75px;
 }
 
+/* General styles for the container */
+.container {
+  max-width: 1200px;  /* Limit max-width for large screens */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Heading styles */
 .heading_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;  /* Center the heading */
 }
 
 .heading_container h2 {
   font-weight: bold;
   text-transform: uppercase;
-  position: relative;
+  margin: 0;
+  padding: 20px 0;
 }
 
 .heading_container h2::before, .heading_container h2::after {
   content: "";
-  position: absolute;
-  top: 50%;
+  display: block;
   width: 40px;
   height: 1px;
   background-color: #fec016;
+  margin: 10px auto;
 }
 
-.heading_container h2::before {
-  left: -5px;
-  -webkit-transform: translate(-100%, -50%);
-          transform: translate(-100%, -50%);
+/* Contact form section */
+.contact-form-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  margin: 20px 0;
 }
 
-.heading_container h2::after {
-  right: -5px;
-  -webkit-transform: translate(100%, -50%);
-          transform: translate(100%, -50%);
+.contact-form {
+  width: 100%;  /* Ensure form takes up full width */
+  max-width: 800px;  /* Increased max-width to make the form wider */
+  background-color: #fff;  /* Optional: Add background to form */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.contact-form input,
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+/* General styles for the container */
+.container {
+  max-width: 1200px;  /* Limit max-width for large screens */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Heading styles */
+.heading_container {
+  width: 80%;
+  margin: 0 auto;
+  text-align: center;  /* Center the heading */
+}
+
+.heading_container h2 {
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.heading_container h2::before, .heading_container h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background-color: #fec016;
+  margin: 10px auto;
+}
+
+/* Contact form section */
+.contact-form-container {
+  display: flex;
+  justify-content: center;  /* Center horizontally */
+  align-items: center;      /* Center vertically */
+  margin: 20px 0;
+  width: 100%;
+}
+
+.contact-form {
+  width: 100%;  /* Ensure form takes up full width */
+  max-width: 800px;  /* Increased max-width to make the form wider */
+  background-color: #fff;  /* Optional: Add background to form */
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input,
+.contact-form button {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.contact-form button {
+  background-color: #fec016; /* Keep original button color */
+  color: white;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #d4a10b; /* Hover effect */
+}
+
+/* Map image container */
+.map-img-container {
+  text-align: center;  /* Center the map image and heading */
+  margin-top: 20px;
+}
+
+.map-img-container img {
+  max-width: 100%;  /* Make the image responsive */
+  height: auto;     /* Maintain aspect ratio */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .heading_container h2 {
+    font-size: 24px;  /* Adjust heading font size for smaller screens */
+  }
+
+  .contact-form-container {
+    padding: 0 15px; /* Add padding on smaller screens */
+  }
+
+  .contact-form {
+    max-width: 100%; /* Ensure form takes full width on smaller screens */
+  }
+
+  .map-img-container img {
+    width: 100%;  /* Ensure map image fills container */
+  }
+}
+
+@media (max-width: 480px) {
+  .heading_container h2 {
+    font-size: 20px;  /* Further adjust font size for very small screens */
+  }
+
+  .contact-form input, .contact-form button {
+    padding: 10px;  /* Reduce padding for mobile screens */
+  }
+}
+
 
 /*header section*/
 .hero_area {
