@@ -140,24 +140,24 @@ body {
 }
 
 .contact-form button {
-  background-color: #fec016; /* Keep original button color */
+  background-color: #fec016; 
   color: white;
   cursor: pointer;
 }
 
 .contact-form button:hover {
-  background-color: #d4a10b; /* Hover effect */
+  background-color: #d4a10b; 
 }
 
 /* Map image container */
 .map-img-container {
-  text-align: center;  /* Center the map image and heading */
+  text-align: center;  
   margin-top: 20px;
 }
 
 .map-img-container img {
-  max-width: 100%;  /* Make the image responsive */
-  height: auto;     /* Maintain aspect ratio */
+  max-width: 100%;  
+  height: auto;     
 }
 
 /* Media Queries for Responsiveness */
